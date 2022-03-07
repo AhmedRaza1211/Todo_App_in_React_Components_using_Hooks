@@ -1,13 +1,8 @@
-const InputCom = ({ onChg, plHdl, tp, inpVal}) => {
+const Input = ({value, onInputChange}) => {
 
     return (
-        <input 
-            onChange={(e) => onChg(e.target.value)}
-            placeholder={plHdl}
-            value={inpVal}
-            type={tp}
-        />
+        <input value={value} onChange={onInputChange} type="text" />
     )
 }
 
-export default InputCom;
+export default Input;

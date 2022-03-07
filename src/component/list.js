@@ -1,24 +1,22 @@
-const List = ({ todoArr, removeTodo, updTodo }) => {
+const List = ({todos, markAsCompleted}) => {
 
     return (
-        <div>
-            {todoArr.map((todo, ind) => {
-                return (
-                    <p
-                        key={ind}
+        <ul>
+            {
+                todos.map((v,i) => {
+                    return (
+                        <li 
+                        key={i}
                         style={{
-                            display: 'block',
-                            marginLeft: 100,
-                            textDecoration: todo.isCompleted ? 'line-through' : 'none'
+                            textDecoration: v.isCompleted ? 'line-through': 'none'
                         }}
-                    >
-                        <span style={{ marginRight: 20 }}> {ind + 1} </span>
-                        <span style={{ marginRight: 20 }} onClick={() => updTodo(ind)}> {todo.text} </span>
-                        <span style={{ marginRight: 20 }} onClick={() => removeTodo(ind)}> X </span>
-                    </p>
-                )
-            })}
-        </div>
+                        >
+                            <span onClick={()=> markAsCompleted(i)} > {v.todo} </span>
+                        </li>
+                    )
+                })
+            }
+        </ul>
     )
 }
 

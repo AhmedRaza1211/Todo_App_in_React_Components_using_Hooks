@@ -1,6 +1,8 @@
-const ButtonCom = ({stl, btnTxt, btnFunc}) => {
+const Button = ({addTodo}) => {
 
-    return <button style={stl} onClick={btnFunc} > {btnTxt} </button>
+    return (
+        <button onClick={addTodo}> Add Todo </button>
+    )
 }
 
-export default ButtonCom;
+export default Button;
